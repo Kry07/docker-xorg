@@ -24,6 +24,12 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
 RUN apt-get install -y --no-install-recommends \
 		libgtk2.0-bin libgtk-3-bin
 
+ARG PULSE_SERVER=tcp:172.17.0.1:4713
+ENV PULSE_SERVER $PULSE_SERVER
+RUN apt-get install -y --no-install-recommends \
+		pulseaudio \
+	&& su user -c 'mkdir -p /home/user/.config/pulse/'
+
 RUN rm -rf /var/lib/apt/lists/*
 
 CMD [ "/bin/bash" ]

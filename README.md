@@ -22,6 +22,8 @@ Ubuntu is in my Opinion the most used and supported linux-distro.
 *HOME /home/user* - Sets the path to the home directory of the user.  
 *DEBIAN_FRONTEND noninteractive* - Let the OS know there is no tty.  
 *DISPLAY $DISPLAY* - Tells the X on which Screen to draw the windows. (Default :0)  
+*PULSE_SERVER $PULSE_SERVER* - Tells docker pulseaudio to connect to other pulseaudio server.  
+ (Default tcp:172.17.0.1:4713) sets to localhost with default pulseaudio port.  
 
 ##### Xorg dependencies *( apt-cache depends xorg )*
 xserver-xorg libgl1-mesa-glx libgl1-mesa-dri libglu1-mesa xfonts-base x11-apps
@@ -44,23 +46,29 @@ We want to be light so no *x11-apps, docs, xterm, xinput, xkb* (xkeyboard).
 
 ##### How to get this Container
 ```
-$ docker pull kry07/xorg:gtk
+$ docker pull kry07/xorg:gtk-pulse
 ```
 
 ```
-$ git clone --single-branch --branch gtk https://github.com/Kry07/docker-xorg.git
+$ git clone --single-branch --branch gtk-pulse https://github.com/Kry07/docker-xorg.git
 $ cd docker-xorg
-$ docker build -t kry07/xorg:gtk .
+$ docker build -t kry07/xorg:gtk-pulse .
 ```
 
-Example where the Language is German and X dispaly set to :10
+Example where the Language is German, X dispaly set to :10 and 
+pulseaudio server is on the ip 192.168.0.120 with port 4747
 ```
-$ docker build --build-arg LANG="de_DE" --build-arg DISPLAY=":10" -t kry07/xorg:gtk .
+$ docker build --build-arg LANG="de_DE" \
+	--build-arg DISPLAY=":10" \
+	--build-arg PULSE_SERVER="tcp:192.168.0.120:4747"
+	-t kry07/xorg:gtk-pulse .
 ```
 
 ##### How to run example
 ```
 $ xhost +si:localuser:$USER
-$ docker run -v /tmp/.X11-unix:/tmp/.X11-unix:ro kry07/xorg:gtk
+$ docker run -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
+	-v $HOME/.config/pulse/cookie:/home/user/.config/pulse/cookie:ro \
+	kry07/xorg:gtk-pulse
 $ su user
 ```
