@@ -21,6 +21,9 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
 		x11-session-utils x11-utils x11-xfs-utils x11-xserver-utils xauth x11-common \
 	&& ln -s /usr/bin/Xorg /usr/bin/X
 
+RUN apt-get install -y --no-install-recommends \
+		libgtk2.0-bin libgtk-3-bin
+
 RUN rm -rf /var/lib/apt/lists/*
 
 CMD [ "/bin/bash" ]

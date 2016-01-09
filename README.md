@@ -44,23 +44,23 @@ We want to be light so no *x11-apps, docs, xterm, xinput, xkb* (xkeyboard).
 
 ##### How to get this Container
 ```
-$ docker pull kry07/xorg:xonly
+$ docker pull kry07/xorg:gtk
 ```
 
 ```
-$ git clone --single-branch --branch master https://github.com/Kry07/docker-xorg.git
+$ git clone --single-branch --branch gtk https://github.com/Kry07/docker-xorg.git
 $ cd docker-xorg
-$ docker build -t kry07/xorg:xonly .
+$ docker build -t kry07/xorg:gtk .
 ```
 
 Example where the Language is German and X dispaly set to :10
 ```
-$ docker build --build-arg LANG="de_DE" --build-arg DISPLAY=":10" -t kry07/xorg:xonly .
+$ docker build --build-arg LANG="de_DE" --build-arg DISPLAY=":10" -t kry07/xorg:gtk .
 ```
 
 ##### How to run example
 ```
 $ xhost +si:localuser:$USER
-$ docker run -v /tmp/.X11-unix:/tmp/.X11-unix:ro kry07/xorg:xonly
+$ docker run -v /tmp/.X11-unix:/tmp/.X11-unix:ro kry07/xorg:gtk
 $ su user
 ```
