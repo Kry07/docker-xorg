@@ -15,7 +15,7 @@ Ubuntu is in my Opinion the most used and supported linux-distro.
 
 #### Dockerfile
 
-- A user *"user"* is created, because **you should run X always as non root !**
+- A user *"user"* is created, because **you should never run X always as root !**
 
 ##### Environment variables
 *LANG $LANG* - Tells the system which language you are using. (Default en_US)  
@@ -41,26 +41,29 @@ We want to be light so no *x11-apps, docs, xterm, xinput, xkb* (xkeyboard).
 *xz-utils unzip* - Will be later of use to extract *zip* and *tar.xz* files.
 
 #### Installation
+```
+$ export xbranch=xonly
+```
 
 ##### How to get this Container
 ```
-$ docker pull kry07/xorg:xonly
+$ docker pull kry07/xorg:${xbranch}
 ```
 
 ```
 $ git clone --single-branch --branch master https://github.com/Kry07/docker-xorg.git
 $ cd docker-xorg
-$ docker build -t kry07/xorg:xonly .
+$ docker build -t kry07/xorg:${xbranch} .
 ```
 
 Example where the Language is German and X dispaly set to :10
 ```
-$ docker build --build-arg LANG="de_DE" --build-arg DISPLAY=":10" -t kry07/xorg:xonly .
+$ docker build --build-arg LANG="de_DE" --build-arg DISPLAY=":10" -t kry07/xorg:${xbranch} .
 ```
 
 ##### How to run example
 ```
 $ xhost +si:localuser:$USER
-$ docker run -v /tmp/.X11-unix:/tmp/.X11-unix:ro kry07/xorg:xonly
+$ docker run -v /tmp/.X11-unix:/tmp/.X11-unix:ro kry07/xorg:${xbranch}
 $ su user
 ```
