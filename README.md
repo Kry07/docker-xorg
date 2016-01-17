@@ -15,7 +15,7 @@ Ubuntu is in my Opinion the most used and supported linux-distro.
 
 #### Dockerfile
 
-- A user *"user"* is created, because **you should run X always as non root !**
+- A user *"user"* is created, because **you should never run X always as root !**
 
 ##### Environment variables
 *LANG $LANG* - Tells the system which language you are using. (Default en_US)  
@@ -43,16 +43,19 @@ We want to be light so no *x11-apps, docs, xterm, xinput, xkb* (xkeyboard).
 *xz-utils unzip* - Will be later of use to extract *zip* and *tar.xz* files.
 
 #### Installation
+```
+$ export xbranch=gtk-pulse
+```
 
 ##### How to get this Container
 ```
-$ docker pull kry07/xorg:gtk-pulse
+$ docker pull kry07/xorg:${xbranch}
 ```
 
 ```
 $ git clone --single-branch --branch gtk-pulse https://github.com/Kry07/docker-xorg.git
 $ cd docker-xorg
-$ docker build -t kry07/xorg:gtk-pulse .
+$ docker build -t kry07/xorg:${xbranch} .
 ```
 
 Example where the Language is German, X dispaly set to :10 and 
@@ -62,6 +65,7 @@ $ docker build --build-arg LANG="de_DE" \
 	--build-arg DISPLAY=":10" \
 	--build-arg PULSE_SERVER="tcp:192.168.0.120:4747"
 	-t kry07/xorg:gtk-pulse .
+	-t kry07/xorg:${xbranch} .
 ```
 
 ##### How to run example
@@ -69,6 +73,6 @@ $ docker build --build-arg LANG="de_DE" \
 $ xhost +si:localuser:$USER
 $ docker run -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
 	-v $HOME/.config/pulse/cookie:/home/user/.config/pulse/cookie:ro \
-	kry07/xorg:gtk-pulse
+	kry07/xorg:${xbranch}
 $ su user
 ```
