@@ -10,12 +10,9 @@ This Container is made to be used as base for gui Applications.
 This Container depends on [buildpack-deps:trusty-curl](https://hub.docker.com/_/buildpack-deps/)  
 *buildpack-deps:trusty-curl* depends on [ubuntu:trusty](https://hub.docker.com/_/ubuntu/)
 
-Why did i choose Ubuntu ?  
-Ubuntu is in my Opinion the most used and supported linux-distro.
-
 #### Dockerfile
 
-- A user *"user"* is created, because **you should never run X always as root !**
+- A user *"user"* is created, because **you should never run X as root !**
 
 ##### Environment variables
 *LANG $LANG* - Tells the system which language you are using. (Default en_US)  
@@ -24,23 +21,6 @@ Ubuntu is in my Opinion the most used and supported linux-distro.
 *DISPLAY $DISPLAY* - Tells the X on which Screen to draw the windows. (Default :0)  
 *PULSE_SERVER $PULSE_SERVER* - Tells docker pulseaudio to connect to other pulseaudio server.  
  (Default tcp:172.17.0.1:4713) sets to localhost with default pulseaudio port.  
-
-##### Xorg dependencies *( apt-cache depends xorg )*
-xserver-xorg libgl1-mesa-glx libgl1-mesa-dri libglu1-mesa xfonts-base x11-apps
-x11-session-utils x11-utils x11-xfs-utils x11-xkb-utils x11-xserver-utils xauth
-xinit xfonts-utils xkb-data xorg-docs-core xterm x11-common xinput xorg-docs
-xfonts-100dpi xfonts-75dpi xfonts-scalable
-
-We take only *xserver-xorg-core*, because we dont want to install input and video drivers.  
-I dont know, if we need the *xfonts-*, maybe i will add them in future.  
-We want to be light so no *x11-apps, docs, xterm, xinput, xkb* (xkeyboard).  
-*xinit* could be of use for special cases, but not for a base Container.
-
-##### avahi-utils, dbus
-*Avahi* and *Dbus* is important to run gui apps.
-
-##### missing base Packages
-*xz-utils unzip* - Will be later of use to extract *zip* and *tar.xz* files.
 
 #### Installation
 ```
