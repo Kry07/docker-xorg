@@ -30,6 +30,12 @@ RUN apt-get install -y --no-install-recommends \
 		pulseaudio \
 	&& su user -c 'mkdir -p /home/user/.config/pulse/'
 
+RUN apt-get install -y --no-install-recommends \
+		gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad \
+		gstreamer1.0-plugins-ugly gstreamer1.0-pulseaudio gstreamer1.0-libav \
+	&& usermod -a -G cdrom user \
+	&& /usr/share/doc/libdvdread4/install-css.sh
+
 RUN rm -rf /var/lib/apt/lists/*
 
 CMD [ "/bin/bash" ]
