@@ -22,7 +22,7 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
 	&& ln -s /usr/bin/Xorg /usr/bin/X
 
 RUN apt-get install -y --no-install-recommends \
-		libgtk2.0-bin libgtk-3-bin
+		libgtk2.0-bin libgtk-3-bin hicolor-icon-theme
 
 ARG PULSE_SERVER=tcp:172.17.0.1:4713
 ENV PULSE_SERVER $PULSE_SERVER

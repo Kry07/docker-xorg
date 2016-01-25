@@ -44,7 +44,6 @@ pulseaudio server is on the ip 192.168.0.120 with port 4747
 $ docker build --build-arg LANG="de_DE" \
 	--build-arg DISPLAY=":10" \
 	--build-arg PULSE_SERVER="tcp:192.168.0.120:4747"
-	-t kry07/xorg:gtk-pulse .
 	-t kry07/xorg:${xbranch} .
 ```
 
