@@ -21,8 +21,9 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
 		x11-session-utils x11-utils x11-xfs-utils x11-xserver-utils xauth x11-common \
 	&& ln -s /usr/bin/Xorg /usr/bin/X
 
+ENV QT_X11_NO_MITSHM 1
 RUN apt-get install -y --no-install-recommends \
-		libgtk2.0-bin libgtk-3-bin hicolor-icon-theme
+		libqtgui4 libqt5gui5
 
 RUN rm -rf /var/lib/apt/lists/*
 
