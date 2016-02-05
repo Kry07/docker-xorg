@@ -25,6 +25,12 @@ ENV QT_X11_NO_MITSHM 1
 RUN apt-get install -y --no-install-recommends \
 		libqtgui4 libqt5gui5
 
+ARG PULSE_SERVER=tcp:172.17.0.1:4713
+ENV PULSE_SERVER $PULSE_SERVER
+RUN apt-get install -y --no-install-recommends \
+		pulseaudio \
+	&& su user -c 'mkdir -p /home/user/.config/pulse/'
+
 RUN rm -rf /var/lib/apt/lists/*
 
 CMD [ "/bin/bash" ]
