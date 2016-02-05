@@ -31,7 +31,7 @@ $ docker pull kry07/xorg:${xbranch}
 ```
 
 ```
-$ git clone --single-branch --branch gtk https://github.com/Kry07/docker-xorg.git
+$ git clone --single-branch --branch ${xbranch} https://github.com/Kry07/docker-xorg.git
 $ cd docker-xorg
 $ docker build -t kry07/xorg:${xbranch} .
 ```
