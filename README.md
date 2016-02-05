@@ -24,7 +24,7 @@ This Container depends on [buildpack-deps:trusty-curl](https://hub.docker.com/_/
 
 #### Installation
 ```
-$ export xbranch=qt-pulse
+$ export xbranch=qt-gstreamer1.0
 ```
 
 ##### How to get this Container
