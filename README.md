@@ -2,13 +2,19 @@ docker Xorg Container
 ---------------------
 
 #### Different branches
-[xonly](https://github.com/Kry07/docker-xorg/tree/xonly)
-[gtk](https://github.com/Kry07/docker-xorg/tree/gtk)
-[gtk-pulse](https://github.com/Kry07/docker-xorg/tree/gtk-pulse)
-[gtk-gstreamer1.0](https://github.com/Kry07/docker-xorg/tree/gtk-gstreamer1.0)
-[qt](https://github.com/Kry07/docker-xorg/tree/qt)
-[qt-pulse](https://github.com/Kry07/docker-xorg/tree/qt-pulse)
-[qt-gstreamer1.0](https://github.com/Kry07/docker-xorg/tree/qt-gstreamer1.0)
+[xonly branch](https://github.com/Kry07/docker-xorg/tree/xonly)
+
+[gtk branch](https://github.com/Kry07/docker-xorg/tree/gtk)
+
+[gtk-pulse branch](https://github.com/Kry07/docker-xorg/tree/gtk-pulse)
+
+[gtk-gstreamer1.0 branch](https://github.com/Kry07/docker-xorg/tree/gtk-gstreamer1.0)
+
+[qt branch](https://github.com/Kry07/docker-xorg/tree/qt)
+
+[qt-pulse branch](https://github.com/Kry07/docker-xorg/tree/qt-pulse)
+
+[qt-gstreamer1.0 branch](https://github.com/Kry07/docker-xorg/tree/qt-gstreamer1.0)
 
 #### Description
 This Container is made to be used as base for gui Applications.
