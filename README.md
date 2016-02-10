@@ -1,6 +1,15 @@
 docker Xorg Container
 ---------------------
 
+#### Different branches
+[xonly](https://github.com/Kry07/docker-xorg/tree/xonly)
+[gtk](https://github.com/Kry07/docker-xorg/tree/gtk)
+[gtk-pulse](https://github.com/Kry07/docker-xorg/tree/gtk-pulse)
+[gtk-gstreamer1.0](https://github.com/Kry07/docker-xorg/tree/gtk-gstreamer1.0)
+[qt](https://github.com/Kry07/docker-xorg/tree/qt)
+[qt-pulse](https://github.com/Kry07/docker-xorg/tree/qt-pulse)
+[qt-gstreamer1.0](https://github.com/Kry07/docker-xorg/tree/qt-gstreamer1.0)
+
 #### Description
 This Container is made to be used as base for gui Applications.
 
@@ -39,31 +48,3 @@ We want to be light so no *x11-apps, docs, xterm, xinput, xkb* (xkeyboard).
 
 ##### missing base Packages
 *xz-utils unzip* - Will be later of use to extract *zip* and *tar.xz* files.
-
-#### Installation
-```
-$ export xbranch=xonly
-```
-
-##### How to get this Container
-```
-$ docker pull kry07/xorg:${xbranch}
-```
-
-```
-$ git clone --single-branch --branch master https://github.com/Kry07/docker-xorg.git
-$ cd docker-xorg
-$ docker build -t kry07/xorg:${xbranch} .
-```
-
-Example where the Language is German and X dispaly set to :10
-```
-$ docker build --build-arg LANG="de_DE" --build-arg DISPLAY=":10" -t kry07/xorg:${xbranch} .
-```
-
-##### How to run example
-```
-$ xhost +si:localuser:$USER
-$ docker run -v /tmp/.X11-unix:/tmp/.X11-unix:ro kry07/xorg:${xbranch}
-$ su user
-```
