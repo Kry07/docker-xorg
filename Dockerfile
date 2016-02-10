@@ -16,7 +16,7 @@ WORKDIR $HOME
 ENV DEBIAN_FRONTEND noninteractive
 ENV DISPLAY $DISPLAY
 RUN apt-get update -y && apt-get install -y --no-install-recommends \
-		xz-utils unzip avahi-utils dbus \
+		apt xz-utils unzip avahi-utils dbus \
 		xserver-xorg-core libgl1-mesa-glx libgl1-mesa-dri libglu1-mesa xfonts-base \
 		x11-session-utils x11-utils x11-xfs-utils x11-xserver-utils xauth x11-common \
 	&& ln -s /usr/bin/Xorg /usr/bin/X
