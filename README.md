@@ -1,25 +1,19 @@
 docker Xorg Container
 ---------------------
 
-#### Different branches
-[xonly branch](https://github.com/Kry07/docker-xorg/tree/xonly)
-
-[gtk branch](https://github.com/Kry07/docker-xorg/tree/gtk)
-
-[gtk-pulse branch](https://github.com/Kry07/docker-xorg/tree/gtk-pulse)
-
-[gtk-gstreamer1.0 branch](https://github.com/Kry07/docker-xorg/tree/gtk-gstreamer1.0)
-
-[qt branch](https://github.com/Kry07/docker-xorg/tree/qt)
-
-[qt-pulse branch](https://github.com/Kry07/docker-xorg/tree/qt-pulse)
-
-[qt-gstreamer1.0 branch](https://github.com/Kry07/docker-xorg/tree/qt-gstreamer1.0)
-
 #### Description
 This Container is made to be used as base for gui Applications.
 
 [Link to docker hub](https://hub.docker.com/r/kry07/xorg/)
+
+##### Supported tags and respective `Dockerfile` links  
+ - [`xonly` , `latest` (xonly/Dockerfile)](https://github.com/Kry07/docker-xorg/blob/xonly/Dockerfile)
+ - [`gtk`  (gtk/Dockerfile)](https://github.com/Kry07/docker-xorg/blob/gtk/Dockerfile)
+ - [`gtk-pulse` (gtk-pulse/Dockerfile)](https://github.com/Kry07/docker-xorg/blob/gtk-pulse/Dockerfile)
+ - [`gtk-gstreamer1.0` (gtk-gstreamer1.0/Dockerfile)](https://github.com/Kry07/docker-xorg/blob/gtk-gstreamer1.0/Dockerfile)
+ - [`qt`  (qt/Dockerfile)](https://github.com/Kry07/docker-xorg/blob/qt/Dockerfile)
+ - [`qt-pulse` (qt-pulse/Dockerfile)](https://github.com/Kry07/docker-xorg/blob/qt-pulse/Dockerfile)
+ - [`qt-gstreamer1.0` (qt-gstreamer1.0/Dockerfile)](https://github.com/Kry07/docker-xorg/blob/qt-gstreamer1.0/Dockerfile)
 
 #### Dependencies
 This Container depends on [buildpack-deps:trusty-curl](https://hub.docker.com/_/buildpack-deps/)  
