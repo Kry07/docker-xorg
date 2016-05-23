@@ -1,28 +1,35 @@
-docker Xorg Container
----------------------
-
-#### Description
-This Container is made to be used as base for gui Applications.
-
 [Link to docker hub](https://hub.docker.com/r/kry07/xorg/)
 
 ##### Supported tags and respective `Dockerfile` links  
- - [`xonly` , `latest` (xonly/Dockerfile)](https://github.com/Kry07/docker-xorg/blob/xonly/Dockerfile)
- - [`gtk`  (gtk/Dockerfile)](https://github.com/Kry07/docker-xorg/blob/gtk/Dockerfile)
- - [`gtk-pulse` (gtk-pulse/Dockerfile)](https://github.com/Kry07/docker-xorg/blob/gtk-pulse/Dockerfile)
- - [`gtk-gstreamer1.0` (gtk-gstreamer1.0/Dockerfile)](https://github.com/Kry07/docker-xorg/blob/gtk-gstreamer1.0/Dockerfile)
- - [`qt`  (qt/Dockerfile)](https://github.com/Kry07/docker-xorg/blob/qt/Dockerfile)
- - [`qt-pulse` (qt-pulse/Dockerfile)](https://github.com/Kry07/docker-xorg/blob/qt-pulse/Dockerfile)
- - [`qt-gstreamer1.0` (qt-gstreamer1.0/Dockerfile)](https://github.com/Kry07/docker-xorg/blob/qt-gstreamer1.0/Dockerfile)
+###### trusty Ubuntu 14.04
+ - [`trusty-xonly` (Dockerfile)](https://github.com/Kry07/docker-xorg/blob/trusty-xonly/Dockerfile)
+ - [`trusty-gtk` (Dockerfile)](https://github.com/Kry07/docker-xorg/blob/trusty-gtk/Dockerfile)
+ - [`trusty-gtk-pulse` (Dockerfile)](https://github.com/Kry07/docker-xorg/blob/trusty-gtk-pulse/Dockerfile)
+ - [`trusty-gtk-gstreamer1.0` (Dockerfile)](https://github.com/Kry07/docker-xorg/blob/trusty-gtk-gstreamer1.0/Dockerfile)
+ - [`trusty-qt`  (Dockerfile)](https://github.com/Kry07/docker-xorg/blob/trusty-qt/Dockerfile)
+ - [`trusty-qt-pulse` (Dockerfile)](https://github.com/Kry07/docker-xorg/blob/trusty-qt-pulse/Dockerfile)
+ - [`trusty-qt-gstreamer1.0` (Dockerfile)](https://github.com/Kry07/docker-xorg/blob/trusty-qt-gstreamer1.0/Dockerfile)
 
-#### Dependencies
-This Container depends on [buildpack-deps:trusty-curl](https://hub.docker.com/_/buildpack-deps/)  
-*buildpack-deps:trusty-curl* depends on [ubuntu:trusty](https://hub.docker.com/_/ubuntu/)
+###### xenial Ubuntu 16.04
+ - [`xonly` , `latest` (Dockerfile)](https://github.com/Kry07/docker-xorg/blob/xonly/Dockerfile)
+ - [`gtk` (Dockerfile)](https://github.com/Kry07/docker-xorg/blob/gtk/Dockerfile)
+ - [`gtk-pulse` (Dockerfile)](https://github.com/Kry07/docker-xorg/blob/gtk-pulse/Dockerfile)
+ - [`gtk-gstreamer1.0` (Dockerfile)](https://github.com/Kry07/docker-xorg/blob/gtk-gstreamer1.0/Dockerfile)
+ - [`qt`  (Dockerfile)](https://github.com/Kry07/docker-xorg/blob/qt/Dockerfile)
+ - [`qt-pulse` (Dockerfile)](https://github.com/Kry07/docker-xorg/blob/qt-pulse/Dockerfile)
+ - [`qt-gstreamer1.0` (Dockerfile)](https://github.com/Kry07/docker-xorg/blob/qt-gstreamer1.0/Dockerfile)
+
+These Containers depends on [buildpack-deps](https://hub.docker.com/_/buildpack-deps/)  
 
 Why did i choose Ubuntu ?  
 Ubuntu is in my Opinion the most used and supported linux-distro.
 
-#### Dockerfile
+I use some Applications with these containers. You can find them in [github.com/Kry07/docker-apps](https://github.com/Kry0/docker-apps).
+Please Comment, otherwise i don't recognize that some one is using my work. I don't upload them anymore to dockerhub, because nobody is using them.
+
+For more information about this image and its history, please see [GitHub repo](https://github.com/Kry07/docker-xorg).
+
+##### Dockerfile
 
 - A user *"user"* is created, because **you should never run X as root !**
 
@@ -48,3 +55,9 @@ We want to be light so no *x11-apps, docs, xterm, xinput, xkb* (xkeyboard).
 
 ##### missing base Packages
 *xz-utils unzip* - Will be later of use to extract *zip* and *tar.xz* files.
+
+##### How to run example
+```
+$ xhost +si:localuser:$USER
+$ docker run -v /tmp/.X11-unix:/tmp/.X11-unix:ro kry07/xorg:${xbranch} ...
+```
