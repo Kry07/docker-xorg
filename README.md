@@ -8,18 +8,17 @@
 - [`qt-pulse` (qt-pulse/Dockerfile)](https://github.com/Kry07/docker-xorg/blob/qt-pulse/Dockerfile)
 - [`qt-gstreamer1.0` (qt-gstreamer1.0/Dockerfile)](https://github.com/Kry07/docker-xorg/blob/qt-gstreamer1.0/Dockerfile)
 
-#### Dependencies
-This Container depends on [buildpack-deps](https://hub.docker.com/_/buildpack-deps/)  
+These Containers depends on [buildpack-deps](https://hub.docker.com/_/buildpack-deps/)  
 
 Why did i choose Ubuntu ?  
 Ubuntu is in my Opinion the most used and supported linux-distro.
 
-I use some Applications with this containers. You can find them in [github.com/Kry07/docker-apps](https://github.com/Kry0/docker-apps).
+I use some Applications with these containers. You can find them in [github.com/Kry07/docker-apps](https://github.com/Kry0/docker-apps).
 Please Comment, otherwise i don't recognize that some one is using my work. I don't upload them anymore to dockerhub, because nobody is using them.
 
 For more information about this image and its history, please see [GitHub repo](https://github.com/Kry07/docker-xorg).
 
-#### Dockerfile
+##### Dockerfile
 
 - A user *"user"* is created, because **you should never run X as root !**
 
