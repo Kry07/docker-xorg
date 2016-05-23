@@ -1,4 +1,4 @@
-FROM buildpack-deps:trusty-curl
+FROM buildpack-deps:xenial-curl
 MAINTAINER Kry <info.mayl@aol.com>
 
 # Defaults, can be changed at build time
