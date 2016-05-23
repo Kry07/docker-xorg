@@ -1,12 +1,21 @@
-
 ##### Supported tags and respective `Dockerfile` links  
-- [`xonly` (xonly/Dockerfile)](https://github.com/Kry07/docker-xorg/blob/xonly/Dockerfile)
-- [`gtk` (gtk/Dockerfile)](https://github.com/Kry07/docker-xorg/blob/gtk/Dockerfile)
-- [`gtk-pulse` (gtk-pulse/Dockerfile)](https://github.com/Kry07/docker-xorg/blob/gtk-pulse/Dockerfile)
-- [`gtk-gstreamer1.0` (gtk-gstreamer1.0/Dockerfile)](https://github.com/Kry07/docker-xorg/blob/gtk-gstreamer1.0/Dockerfile)
-- [`qt`  (qt/Dockerfile)](https://github.com/Kry07/docker-xorg/blob/qt/Dockerfile)
-- [`qt-pulse` (qt-pulse/Dockerfile)](https://github.com/Kry07/docker-xorg/blob/qt-pulse/Dockerfile)
-- [`qt-gstreamer1.0` (qt-gstreamer1.0/Dockerfile)](https://github.com/Kry07/docker-xorg/blob/qt-gstreamer1.0/Dockerfile)
+###### trusty Ubuntu 14.04
+ - [`trusty-xonly` (Dockerfile)](https://github.com/Kry07/docker-xorg/blob/trusty-xonly/Dockerfile)
+ - [`trusty-gtk` (Dockerfile)](https://github.com/Kry07/docker-xorg/blob/trusty-gtk/Dockerfile)
+ - [`trusty-gtk-pulse` (Dockerfile)](https://github.com/Kry07/docker-xorg/blob/trusty-gtk-pulse/Dockerfile)
+ - [`trusty-gtk-gstreamer1.0` (Dockerfile)](https://github.com/Kry07/docker-xorg/blob/trusty-gtk-gstreamer1.0/Dockerfile)
+ - [`trusty-qt`  (Dockerfile)](https://github.com/Kry07/docker-xorg/blob/trusty-qt/Dockerfile)
+ - [`trusty-qt-pulse` (Dockerfile)](https://github.com/Kry07/docker-xorg/blob/trusty-qt-pulse/Dockerfile)
+ - [`trusty-qt-gstreamer1.0` (Dockerfile)](https://github.com/Kry07/docker-xorg/blob/trusty-qt-gstreamer1.0/Dockerfile)
+
+###### xenial Ubuntu 16.04
+ - [`xonly` , `latest` (Dockerfile)](https://github.com/Kry07/docker-xorg/blob/xonly/Dockerfile)
+ - [`gtk` (Dockerfile)](https://github.com/Kry07/docker-xorg/blob/gtk/Dockerfile)
+ - [`gtk-pulse` (Dockerfile)](https://github.com/Kry07/docker-xorg/blob/gtk-pulse/Dockerfile)
+ - [`gtk-gstreamer1.0` (Dockerfile)](https://github.com/Kry07/docker-xorg/blob/gtk-gstreamer1.0/Dockerfile)
+ - [`qt`  (Dockerfile)](https://github.com/Kry07/docker-xorg/blob/qt/Dockerfile)
+ - [`qt-pulse` (Dockerfile)](https://github.com/Kry07/docker-xorg/blob/qt-pulse/Dockerfile)
+ - [`qt-gstreamer1.0` (Dockerfile)](https://github.com/Kry07/docker-xorg/blob/qt-gstreamer1.0/Dockerfile)
 
 These Containers depends on [buildpack-deps](https://hub.docker.com/_/buildpack-deps/)  
 
