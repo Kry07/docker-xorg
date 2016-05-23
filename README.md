@@ -37,23 +37,6 @@ For more information about this image and its history, please see [GitHub repo](
 *DEBIAN_FRONTEND noninteractive* - Let the OS know there is no tty.  
 *DISPLAY $DISPLAY* - Tells the X on which Screen to draw the windows. (Default :0)  
 
-##### Xorg dependencies *( apt-cache depends xorg )*
-xserver-xorg libgl1-mesa-glx libgl1-mesa-dri libglu1-mesa xfonts-base x11-apps
-x11-session-utils x11-utils x11-xfs-utils x11-xkb-utils x11-xserver-utils xauth
-xinit xfonts-utils xkb-data xorg-docs-core xterm x11-common xinput xorg-docs
-xfonts-100dpi xfonts-75dpi xfonts-scalable
-
-We take only *xserver-xorg-core*, because we dont want to install input and video drivers.  
-I dont know, if we need the *xfonts-*, maybe i will add them in future.  
-We want to be light so no *x11-apps, docs, xterm, xinput, xkb* (xkeyboard).  
-*xinit* could be of use for special cases, but not for a base Container.
-
-##### avahi-utils, dbus
-*Avahi* and *Dbus* is important to run gui apps.
-
-##### missing base Packages
-*xz-utils unzip* - Will be later of use to extract *zip* and *tar.xz* files.
-
 ##### How to run example
 ```
 $ xhost +si:localuser:$USER
